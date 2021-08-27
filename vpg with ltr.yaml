@@ -1,0 +1,42 @@
+apiVersion: z4k.zerto.com/v1
+kind: vpg
+spec:
+  Name : vpg_name
+  SourceSite :
+    Id: site_name
+  TargetSite :
+    Id: site_name
+  RecoveryStorageClass: default
+  JournalHistoryInHours: 72
+  BackupSettings:
+      RepositoryInformation:
+        BackupTargetType : AzureBlob
+        AzureBackupRepositoryInformation:
+          StorageAccountName : 
+          DirectoryId : 
+          CredentialsSecretReference:
+            Site:
+              Id: site_name
+            Id:
+              Name: ltr_secret
+              NamespaceId:
+                NamespaceName: default
+      IsCompressionEnabled: true
+      SchedulingAndRetentionSettings:
+         PeriodsSettings:
+         - PeriodType : Yearly
+           Method : Full
+           ExpiresAfterValue : 7
+           ExpiresAfterUnit : Years
+         - PeriodType : Monthly
+           Method : Full
+           ExpiresAfterValue : 12
+           ExpiresAfterUnit : Months
+         - PeriodType : Weekly
+           Method : Full
+           ExpiresAfterValue : 4
+           ExpiresAfterUnit : Weeks
+         - PeriodType : Daily
+           Method : Incremental
+           ExpiresAfterValue : 7
+           ExpiresAfterUnit : Days

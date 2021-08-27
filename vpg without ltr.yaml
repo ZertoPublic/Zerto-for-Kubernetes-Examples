@@ -1,0 +1,10 @@
+apiVersion: z4k.zerto.com/v1
+kind: vpg
+spec:
+  Name : vpg_name
+  SourceSite :
+    Id: site_name
+  TargetSite :
+    Id: site_name
+  RecoveryStorageClass: default
+  JournalHistoryInHours: 96
