@@ -1,4 +1,4 @@
-# Zerto-for-Kubernetes-Examples
+# Zerto for Kubernetes: Examples
 *Starter YAMLs to use when deploying and using Zerto for Kubernetes*
 
 
@@ -9,3 +9,5 @@ To use long-term retention (LTR):
 2. Create K8s secret for use with that repo: `kubectl create secret -f secret.yaml`
 3. Define the LTR settings for the VPG with the secret name listed under CredentialsSecretReference.Id.Name
 4. Create or update the VPG
+
+Try these and more for free in the [Zerto for Kubernetes hands-on lab](https://www.zerto.com/labs) in myZerto.
